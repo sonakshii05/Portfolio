@@ -950,37 +950,52 @@ section p {
   color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 #Projects h2 {
   font-size: 2.5rem;
   font-weight: 600;
   color: #e5a1e5;
   text-align: center;
   margin-bottom: 3rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+/* Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 1.8rem;
   margin-top: 2rem;
 }
 
+/* Cards */
 .project-card {
   background: #1a1a1a;
   border: 1px solid #333;
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  padding: 1.6rem;
+  transition: 
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 35%;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(229, 161, 229, 0.15);
+  border-color: #e5a1e5;
 }
 
+/* Text */
 .project-card h4 {
   color: #fff;
   margin-bottom: 0.3rem;
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .project-year {
@@ -992,7 +1007,6 @@ section p {
   color: #ccc;
   font-size: 0.95rem;
   margin: 0.6rem 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .project-tools {
@@ -1000,22 +1014,64 @@ section p {
   font-size: 0.9rem;
 }
 
+/* Links */
 .project-links a {
   color: #e5a1e5;
   text-decoration: none;
   font-weight: 500;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 1rem;
+  position: relative;
 }
 
-.project-links a:hover {
-  text-decoration: underline;
+.project-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #e5a1e5;
+  transition: width 0.3s ease;
 }
 
+.project-links a:hover::after {
+  width: 100%;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
 }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
 /* ============================
    CONTACT SECTION
 ============================ */
