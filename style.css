@@ -983,7 +983,7 @@ section p {
   transform: translateY(40px);
   animation: fadeUp 0.8s ease forwards;
   animation-timeline: view();
-  animation-range: entry 20% cover 35%;
+  animation-range: entry 10% cover 20%;
 }
 
 .project-card:hover {
@@ -997,7 +997,11 @@ section p {
   color: #fff;
   margin-bottom: 0.3rem;
 }
-
+.project-card h5 {
+  color:blueviolet;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
 .project-year {
   color: #e5a1e5;
   font-size: 0.9rem;
@@ -1143,4 +1147,63 @@ section p {
   .contact-cards {
     grid-template-columns: 1fr;
   }
+}
+#Tools {
+  padding: 4rem 2rem;
+  background: #0f0f0f;
+  color: white;
+  text-align: center;
+}
+
+#Tools h2 {
+  font-size: 2.4rem;
+  color: #e5a1e5;
+  margin-bottom: 3rem;
+}
+
+/* layout */
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* group cards */
+.tool-group {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #333;
+  transition: 0.3s ease;
+}
+
+.tool-group:hover {
+  border-color: #e5a1e5;
+  box-shadow: 0 10px 25px rgba(229,161,229,0.15);
+}
+
+.tool-group h3 {
+  color: #e5a1e5;
+  margin-bottom: 1rem;
+}
+
+/* tool chips */
+.tool-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.tool-items span {
+  background: rgba(229,161,229,0.12);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.tool-items span:hover {
+  background: #e5a1e5;
+  color: black;
 }
