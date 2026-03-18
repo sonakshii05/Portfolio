@@ -1153,6 +1153,7 @@ section p {
   background: #0f0f0f;
   color: white;
   text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #Tools h2 {
@@ -1206,4 +1207,29 @@ section p {
 .tool-items span:hover {
   background: #e5a1e5;
   color: black;
+}
+
+#Skills {
+  padding: 4rem 2rem;
+  background: #121212;
+  text-align: center;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#Skills h2 {
+  font-size: 2.4rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #e5a1e5;
+  margin-bottom: 2rem;
+}
+
+.skills-wrapper {
+  max-width: 500px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }

@@ -107,3 +107,58 @@ function animateContacts() {
 window.addEventListener('scroll', animateContacts);
 animateContacts();
 
+// ==================== SKILL RADAR ====================
+document.addEventListener("DOMContentLoaded", () => {
+
+  const ctx = document.getElementById('skillsChart');
+
+  if (!ctx) return; // prevents errors if section not loaded
+
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: [
+        'Frontend',
+        'Backend',
+        'Data Analysis',
+        'Machine Learning',
+        'Problem Solving',
+        'UI/UX'
+      ],
+      datasets: [{
+        label: 'Skill Level',
+        data: [45, 10, 20, 5, 7, 85],
+        fill: true,
+        backgroundColor: 'rgba(229,161,229,0.2)',
+        borderColor: '#e5a1e5',
+        pointBackgroundColor: '#e5a1e5',
+        pointBorderColor: '#fff'
+      }]
+    },
+    options: {
+      scales: {
+        r: {
+          angleLines: { color: '#333' },
+          grid: { color: '#333' },
+          pointLabels: {
+            color: '#fff',
+            font: { size: 13 }
+          },
+          ticks: {
+            backdropColor: 'transparent',
+            color: '#aaa',
+            stepSize: 20
+          },
+          suggestedMin: 0,
+          suggestedMax: 100
+        }
+      },
+      plugins: {
+        legend: {
+          labels: { color: '#fff' }
+        }
+      }
+    }
+  });
+
+});
